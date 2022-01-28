@@ -2,13 +2,12 @@ import torch
 import torch.nn as nn
 import torchvision.datasets as dsets
 import torchvision.transforms as transforms
-import torch.nn.functional as F
 import argparse
 import matplotlib.pyplot as plt
-
+import time
 
 # Argument parser
-parser = argparse.ArgumentParser(description='EE379K HW1 - SimpleFC')
+parser = argparse.ArgumentParser(description='EE379K HW1 - Starter code')
 # Define the mini-batch size, here the size is 128 images per batch
 parser.add_argument('--batch_size', type=int, default=128, help='Number of samples per mini-batch')
 # Define the number of epochs for training
@@ -35,39 +34,31 @@ random_seed = 1
 torch.manual_seed(random_seed)
 
 # MNIST Dataset (Images and Labels)
-train_dataset = dsets.MNIST(root='data', train=True, transform=transforms.Compose([transforms.ToTensor(),transforms.Normalize(mean=0.1307, std=0.3081),]), download=True)
-test_dataset = dsets.MNIST(root='data', train=False, transform=transforms.Compose([transforms.ToTensor(),transforms.Normalize(mean=0.1307, std=0.3081),]))
+train_dataset = dsets.MNIST(root='data', train=True, transform=transforms.ToTensor(), download=True)
+test_dataset = dsets.MNIST(root='data', train=False, transform=transforms.ToTensor())
 
 # Dataset Loader (Input Pipeline)
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
-#best probability amont 0.0 0.2 0.5 0.8
-dropout_prob = 0.5
+
 # Define your model
-class SimpleFC(nn.Module):
+class LogisticRegression(nn.Module):
     def __init__(self, input_size, num_classes):
-        super(SimpleFC, self).__init__()
-        self.linear1 = nn.Linear(input_size, 512)
-        self.linear2 = nn.Linear(512, 256)
-        self.linear3 = nn.Linear(256, 128)
-        self.linear4 = nn.Linear(128, num_classes)
-        self.drop_layer = nn.Dropout(p=dropout_prob)
-        
+        super(LogisticRegression, self).__init__()
+        self.linear = nn.Linear(input_size, num_classes)
 
     # Your model only contains a single linear layer
     def forward(self, x):
-        out = F.relu(self.linear1(x))
-        out = self.drop_layer(out)
-        out = F.relu(self.linear2(out))
-        out = self.drop_layer(out)
-        out = F.relu(self.linear3(out))
-        out = self.drop_layer(out)
-        out = self.linear4(out)
+        out = self.linear(x)
         return out
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # use cuda if available
+device
 
-model = SimpleFC(input_size, num_classes)
+model = LogisticRegression(input_size, num_classes)
+
+model.to(device)        # put model to cuda
 
 # Define your loss and optimizer
 criterion = nn.CrossEntropyLoss()  # Softmax is internally computed.
@@ -75,15 +66,14 @@ optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
 
 
 
-loss_train_his = []
-loss_test_his = []
-
-acc_train_his = []
-acc_test_his = []
+total_training_time = 0
 
 
 # Training loop
 for epoch in range(num_epochs):
+    
+    start_training_epoch = time.time()   # start count time for each epoch
+
     # Training phase
     train_correct = 0
     train_total = 0
@@ -91,6 +81,9 @@ for epoch in range(num_epochs):
     # Sets the model in training mode.
     model = model.train()
     for batch_idx, (images, labels) in enumerate(train_loader):
+
+        images, labels = images.to(device), labels.to(device)       #put images and labels to gpu
+
         # Here we vectorize the 28*28 images as several 784-dimensional inputs
         images = images.view(-1, input_size)
         # Sets the gradients to zero
@@ -109,16 +102,21 @@ for epoch in range(num_epochs):
         _, predicted = outputs.max(1)
         train_total += labels.size(0)
         train_correct += predicted.eq(labels).sum().item()
+
         # Print every 100 steps the following information
         if (batch_idx + 1) % 100 == 0:
             print('Epoch: [%d/%d], Step: [%d/%d], Loss: %.4f Acc: %.2f%%' % (epoch + 1, num_epochs, batch_idx + 1,
                                                                              len(train_dataset) // batch_size,
-                                                                             train_loss / (batch_idx + 1),
+                                                                                 train_loss / (batch_idx + 1),
                                                                              100. * train_correct / train_total))
     
-    loss_train_his.append(train_loss / (batch_idx + 1))
-    acc_train_his.append(100. * train_correct / train_total)
+    torch.cuda.synchronize()             # cuda is asynchronous...
+    end_training_epoch = time.time()     # end timing measurement
 
+    elapsed_training_time = end_training_epoch - start_training_epoch
+
+    total_training_time += elapsed_training_time
+    
     # Testing phase
     test_correct = 0
     test_total = 0
@@ -129,6 +127,10 @@ for epoch in range(num_epochs):
     # It will reduce memory consumption for computations.
     with torch.no_grad():
         for batch_idx, (images, labels) in enumerate(test_loader):
+
+            images, labels = images.to(device), labels.to(device)       # put also on gpu
+
+            
             # Here we vectorize the 28*28 images as several 784-dimensional inputs
             images = images.view(-1, input_size)
             # Perform the actual inference
@@ -143,29 +145,6 @@ for epoch in range(num_epochs):
             test_correct += predicted.eq(labels).sum().item()
     print('Test accuracy: %.2f %% Test loss: %.4f' % (100. * test_correct / test_total, test_loss / (batch_idx + 1)))
 
-    loss_test_his.append(test_loss / (batch_idx + 1))
-    acc_test_his.append(100. * test_correct / test_total)
-    
-
-loss_plot = plt.figure(1)
-
-plt.plot(loss_train_his, 'g', label='Training loss')
-plt.plot(loss_test_his, 'b', label='Test loss')
-plt.title('Training and Test loss')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
-
-plt.savefig("p2_q2_loss_output_00.jpg")
 
 
-# acc_plot = plt.figure(2)
-
-# plt.plot(acc_train_his, 'g', label='Training Accuracy')
-# plt.plot(acc_test_his, 'b', label='Test Accuracy')
-# plt.title('Training and Test Accuracy')
-# plt.xlabel('Epochs')
-# plt.ylabel('Accuracy')
-# plt.legend()
-
-# plt.savefig("acc_output_p2.jpg")
+print("Total training time = %f sec" %total_training_time)

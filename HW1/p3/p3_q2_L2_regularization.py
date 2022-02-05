@@ -53,6 +53,7 @@ train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=bat
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
 
+
 # Define your model
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes):
@@ -127,6 +128,14 @@ for epoch in range(num_epochs):
         outputs = model(images)
         # Compute the loss between the predictions (outputs) and the ground-truth labels
         loss = criterion(outputs, labels)
+
+        # L2 norm for regularization
+        l2_lambda = 0.0001
+        l2_norm = sum(p.pow(2.0).sum()
+                  for p in model.parameters())
+ 
+        loss = loss + l2_lambda * l2_norm
+
         # Do backpropagation to update the parameters of your model
         loss.backward()
         # Performs a single optimization step (parameter update)
@@ -192,7 +201,7 @@ plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
  
-plt.savefig("p3_q2_loss_output" + "_epochs_" + str(num_epochs) + "_conv1_ch_" + str(conv1_ch_size) + "_conv2_ch_" + str(conv2_ch_size) + "_lr_" + str(learning_rate) + ".jpg")
+plt.savefig("p3_q2_loss_output_L2_norm" + "_epochs_" + str(num_epochs) + "_conv1_ch_" + str(conv1_ch_size) + "_conv2_ch_" + str(conv2_ch_size) + ".jpg")
  
  
 acc_plot = plt.figure(2)
@@ -204,4 +213,4 @@ plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
 plt.legend()
  
-plt.savefig("p3_q2_acc_output" + "_epochs_" + str(num_epochs) + "_conv1_ch_" + str(conv1_ch_size) + "_conv2_ch_" + str(conv2_ch_size) + "_lr_" + str(learning_rate) + ".jpg")
+plt.savefig("p3_q2_acc_output_L2_norm" + "_epochs_" + str(num_epochs) + "_conv1_ch_" + str(conv1_ch_size) + "_conv2_ch_" + str(conv2_ch_size) + ".jpg")

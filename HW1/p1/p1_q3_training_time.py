@@ -5,6 +5,7 @@ import torchvision.transforms as transforms
 import argparse
 import matplotlib.pyplot as plt
 import time
+import numpy as np
 
 # Argument parser
 parser = argparse.ArgumentParser(description='EE379K HW1 - Starter code')
@@ -54,7 +55,6 @@ class LogisticRegression(nn.Module):
         return out
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # use cuda if available
-device
 
 model = LogisticRegression(input_size, num_classes)
 
@@ -66,13 +66,14 @@ optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
 
 
 
-total_training_time = 0
+starter, ender = torch.cuda.Event(enable_timing=True), torch.cuda.Event(enable_timing=True)
 
+timing_arr = np.zeros(num_epochs)
 
 # Training loop
 for epoch in range(num_epochs):
     
-    start_training_epoch = time.time()   # start count time for each epoch
+    starter.record()    # start count time
 
     # Training phase
     train_correct = 0
@@ -110,12 +111,15 @@ for epoch in range(num_epochs):
                                                                                  train_loss / (batch_idx + 1),
                                                                              100. * train_correct / train_total))
     
-    torch.cuda.synchronize()             # cuda is asynchronous...
-    end_training_epoch = time.time()     # end timing measurement
+    
+    ender.record()  # end count time
 
-    elapsed_training_time = end_training_epoch - start_training_epoch
-
-    total_training_time += elapsed_training_time
+    torch.cuda.synchronize()             # cuda is asynchronous, wait for synq
+    
+    curr_time = starter.elapsed_time(ender)
+    
+    timing_arr[epoch] = curr_time
+    
     
     # Testing phase
     test_correct = 0
@@ -146,5 +150,6 @@ for epoch in range(num_epochs):
     print('Test accuracy: %.2f %% Test loss: %.4f' % (100. * test_correct / test_total, test_loss / (batch_idx + 1)))
 
 
+total_training_time = np.sum(timing_arr)
 
-print("Total training time = %f sec" %total_training_time)
+print("Total training time = %f sec" %(total_training_time/1000))

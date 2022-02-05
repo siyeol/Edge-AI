@@ -5,6 +5,7 @@ import torchvision.transforms as transforms
 import argparse
 import matplotlib.pyplot as plt
 import time
+import numpy as np
 
 # Argument parser
 parser = argparse.ArgumentParser(description='EE379K HW1 - Starter code')
@@ -38,9 +39,12 @@ train_dataset = dsets.MNIST(root='data', train=True, transform=transforms.ToTens
 test_dataset = dsets.MNIST(root='data', train=False, transform=transforms.ToTensor())
 
 
+test_batch_size = 1  # set test batch size to 1
 # Dataset Loader (Input Pipeline)
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
-test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=1, shuffle=False)    # set batch size to 1
+test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=test_batch_size, shuffle=False)   
+
+
 
 
 # Define your model
@@ -55,7 +59,7 @@ class LogisticRegression(nn.Module):
         return out
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # use cuda if available
-device
+
 
 model = LogisticRegression(input_size, num_classes)
 
@@ -111,7 +115,8 @@ for epoch in range(num_epochs):
     
 
 
-total_inference_time = 0
+starter, ender = torch.cuda.Event(enable_timing=True), torch.cuda.Event(enable_timing=True)
+timing_arr = np.zeros(len(test_loader))    # we have only 1 batch of 10000 images
 
 # Testing phase
 test_correct = 0
@@ -130,15 +135,17 @@ with torch.no_grad():
         # Here we vectorize the 28*28 images as several 784-dimensional inputs
         images = images.view(-1, input_size)
         
-        start_inference_time = time.time()   # start count time
+        starter.record()   # start count time
         # Perform the actual inference
         outputs = model(images)
 
-        torch.cuda.synchronize()             # cuda is asynchronous...
-        end_inference_time = time.time()     # end timing measurement
+        ender.record()   # end count time
 
-        elapsed_inference_time = end_inference_time - start_inference_time
-        total_inference_time += elapsed_inference_time
+        torch.cuda.synchronize()   # cuda is asynchronous...
+
+        curr_time = starter.elapsed_time(ender)
+
+        timing_arr[batch_idx] = curr_time
         
         # Compute the loss
         loss = criterion(outputs, labels)
@@ -148,10 +155,14 @@ with torch.no_grad():
         _, predicted = torch.max(outputs.data, 1)
         test_total += labels.size(0)
         test_correct += predicted.eq(labels).sum().item()
+
 print('Test accuracy: %.2f %% Test loss: %.4f' % (100. * test_correct / test_total, test_loss / (batch_idx + 1)))
 
-print("Total inference time = %f sec" %total_inference_time)
 
-print("Average time for inference per image = %f[ms]" % (1000*total_inference_time /len(test_loader)))
+
+total_inference_time = np.sum(timing_arr)
+print("Total inference time = %f sec" %(total_inference_time/1000))
+
+print("Average time for inference per image = %f msec" % (total_inference_time /len(test_loader)))
 
 

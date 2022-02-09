@@ -14,16 +14,12 @@ for line in df:
     xtime = float(time) - 1644445763.3950467
     times.append(float(xtime))
     powers.append(float(power))
-
-    # core4s.append(float(core4)*100)
-    # core5s.append(float(core5)*100)
-    # core6s.append(float(core6)*100)
-    # core7s.append(float(core7)*100)
     temps.append(max(float(temp4),float(temp5),float(temp6),float(temp7)))
 
 print("AVG Power :", numpy.mean(powers))
 print("AVG Temperature :", numpy.mean(temps))
-
+print("MAX Temperature :", max(temps))
+print("Energy (J): ", sum(powers)*0.2)
 
 
 power_plot = plt.figure(1, figsize=(20,5))

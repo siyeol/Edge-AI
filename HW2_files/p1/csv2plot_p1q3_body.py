@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
+import numpy
 
 times=[]
 powers=[]
@@ -19,6 +20,9 @@ for line in df:
     # core6s.append(float(core6)*100)
     # core7s.append(float(core7)*100)
     temps.append(max(float(temp4),float(temp5),float(temp6),float(temp7)))
+
+print("AVG Power :", numpy.mean(powers))
+print("AVG Temperature :", numpy.mean(temps))
 
 
 

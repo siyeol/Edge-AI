@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
+import numpy
 
 times=[]
 powers=[]
@@ -21,6 +22,8 @@ for line in df:
     temps.append(max(float(temp4),float(temp5),float(temp6),float(temp7)))
 
 
+print("AVG Power :", numpy.mean(powers))
+print("AVG Temperature :", numpy.mean(temps))
 
 power_plot = plt.figure(1, figsize=(20,5))
 plt.plot(times, powers, label='Power[W]')

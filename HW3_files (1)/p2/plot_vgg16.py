@@ -10,6 +10,8 @@ times_mc1=[]
 powers_mc1=[]
 temps_mc1=[]
 
+runpow_rsp=[]
+runpow_mc1=[]
 
 df_rsp = open("log_raspberry_vgg16.csv")
 df_mc1 = open("log_mc1_vgg16.csv")
@@ -23,6 +25,8 @@ for line in df_rsp:
     times_rsp.append(float(xtime))
     powers_rsp.append(float(total_power))
     temps_rsp.append(float(temps_avg))
+    if float(time_stamp) >= 1646072677.8205466 and float(time_stamp) <= 1646074341.0597415:
+        runpow_rsp.append(float(total_power))
 
 for line in df_mc1:
     (time_stamp, total_power, temps_avg, temp) = line.split(',')
@@ -30,6 +34,16 @@ for line in df_mc1:
     times_mc1.append(float(xtime))
     powers_mc1.append(float(total_power))
     temps_mc1.append(float(temps_avg))
+    if float(time_stamp) >= 1646080366.1685543 and float(time_stamp) <= 1646081448.3724623:
+        runpow_mc1.append(float(total_power))
+
+sum_runpow_rsp = sum(runpow_rsp)
+sum_runpow_mc1 = sum(runpow_mc1)
+
+print(len(runpow_rsp), len(runpow_mc1))
+
+print("RSP energy (J) :", sum_runpow_rsp * (0.2))
+print("MC1 energy (J) :", sum_runpow_mc1 * (0.2))
 
 
 power_plot = plt.figure(1, figsize=(20,5))

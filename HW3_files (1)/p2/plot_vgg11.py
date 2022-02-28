@@ -25,8 +25,8 @@ for line in df_rsp:
     times_rsp.append(float(xtime))
     powers_rsp.append(float(total_power))
     temps_rsp.append(float(temps_avg))
-    # if float(time_stamp) >= 1646070329.88807 and float(time_stamp) <= 1646071278.378308:
-    #     runpow_rsp.append(float(time_stamp))
+    if float(time_stamp) >= 1646070329.88807 and float(time_stamp) <= 1646071278.378308:
+        runpow_rsp.append(float(total_power))
 
 for line in df_mc1:
     (time_stamp, total_power, temps_avg, temp) = line.split(',')
@@ -34,14 +34,16 @@ for line in df_mc1:
     times_mc1.append(float(xtime))
     powers_mc1.append(float(total_power))
     temps_mc1.append(float(temps_avg))
-#     if float(time_stamp) >= 1646078032.8226151 and float(time_stamp) <= 1646078692.6654227:
-#         runpow_mc1.append(float(time_stamp))
+    if float(time_stamp) >= 1646078032.8226151 and float(time_stamp) <= 1646078692.6654227:
+        runpow_mc1.append(float(total_power))
 
-# avg_runpow_rsp = np.mean(runpow_rsp)
-# avg_runpow_mc1 = np.mean(runpow_mc1)
+sum_runpow_rsp = sum(runpow_rsp)
+sum_runpow_mc1 = sum(runpow_mc1)
 
-# print("RSP energy (J) :", avg_runpow_rsp * (1646071278.378308 - 1646070329.88807))
-# print("MC1 energy (J) :", avg_runpow_mc1 * (1646078692.6654227 - 1646078032.8226151))
+print(len(runpow_rsp), len(runpow_mc1))
+
+print("RSP energy (J) :", sum_runpow_rsp * (0.2))
+print("MC1 energy (J) :", sum_runpow_mc1 * (0.2))
 
 power_plot = plt.figure(1, figsize=(20,5))
 plt.plot(times_mc1, powers_mc1, label='MC1 [W]')

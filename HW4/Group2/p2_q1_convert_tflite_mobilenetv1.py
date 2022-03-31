@@ -7,9 +7,5 @@ new_model.load_weights("./models/monet/mobilenet_tf.ckpt")
 converter = tf.lite.TFLiteConverter.from_keras_model(new_model)
 tflite_model = converter.convert()
 
-# # Convert the model
-# converter = tf.lite.TFLiteConverter.from_saved_model("./models/monet/mobilenet") # path to the SavedModel directory
-# tflite_model = converter.convert()
-
 with open("./models/monet/Mobilenetv1.tflite", 'wb') as f:
     f.write(tflite_model)

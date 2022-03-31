@@ -48,78 +48,46 @@ if gpus:
 # use GPU
 with tf.device("/device:GPU:0"):
 
+  model = VGG()
+  print(model.summary())
 
-    model = VGG()
-    print(model.summary())
+  # TODO: Load the training and testing datasets
+  (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.cifar10.load_data()
 
-    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # use cuda if available
-    # model.to(device)        # put model to cuda
-    # summary(model, (3, 32, 32))
+  # TODO: Convert the datasets to contain only float values
+  train_images_norm = train_images.astype('float32')
+  test_images_norm = test_images.astype('float32')
 
+  # TODO: Normalize the datasets
+  train_images_norm = train_images_norm/255.0
+  test_images_norm = test_images_norm/255.0
 
-    # TODO: Load the training and testing datasets
+  # TODO: Encode the labels into one-hot format
+  train_labels = tf.keras.utils.to_categorical(train_labels)
+  test_labels = tf.keras.utils.to_categorical(test_labels)
 
-    (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.cifar10.load_data()
-    # class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+  # TODO: Configures the model for training using compile method
+  model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001), loss = 'categorical_crossentropy', metrics=['accuracy'])
 
-    # Prepare the training dataset.
-    # train_dataset = tf.data.Dataset.from_tensor_slices((train_images, train_labels))
-    # train_dataset = train_dataset.shuffle(buffer_size=1024).batch(batch_size)
+  # TODO: Train the model using fit method
+  start = time.time()
+  history = model.fit(train_images_norm, train_labels, epochs=epochs, batch_size=batch_size, validation_data=(test_images_norm, test_labels), verbose=1)
+  end = time.time()
 
-    # # Prepare the testing dataset.
-    # test_dataset = tf.data.Dataset.from_tensor_slices((test_images, test_labels))
-    # test_dataset = test_dataset.batch(batch_size)
+  total_training_time = end - start
 
-
-
-    # TODO: Convert the datasets to contain only float values
-    train_images_norm = train_images.astype('float32')
-    test_images_norm = test_images.astype('float32')
-
-    # TODO: Normalize the datasets
-    train_images_norm = train_images_norm/255.0
-    test_images_norm = test_images_norm/255.0
-
-    # TODO: Encode the labels into one-hot format
-    train_labels = tf.keras.utils.to_categorical(train_labels)
-    test_labels = tf.keras.utils.to_categorical(test_labels)
-
-    # train_labels_onehot = tf.one_hot(train_labels, depth=len(np.unique(y_train)))
-    # test_labels_onehot = tf.one_hot(test_labels, depth=len(np.unique(y_train)))
-
-    # TODO: Configures the model for training using compile method
-    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001), loss = 'categorical_crossentropy', metrics=['accuracy'])
-
-    # TODO: Train the model using fit method
-    start = time.time()
-    history = model.fit(train_images_norm, train_labels, epochs=epochs, batch_size=batch_size, validation_data=(test_images_norm, test_labels), verbose=1)
-    end = time.time()
-
-    total_training_time = end - start
-
-    print("Total time: ", total_training_time, "seconds")
+  print("Total time: ", total_training_time, "seconds")
 
 
-    # plt.plot(history.history['accuracy'], label='accuracy')
-    # plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
-    # plt.xlabel('Epoch')
-    # plt.ylabel('Accuracy')
-    # plt.grid()
-    # plt.legend(loc='lower right')
+  test_loss, test_acc = model.evaluate(test_images_norm,  test_labels, verbose=2)
+  print("test_acc :", test_acc)
+  print(history.history['val_accuracy'])
 
-    test_loss, test_acc = model.evaluate(test_images_norm,  test_labels, verbose=2)
-    print("test_acc :", test_acc)
-    print(history.history['val_accuracy'])
+  # TODO: Save the weights of the model in .ckpt format
+  if (model_to_train == "VGG11"):
+      #model.save("./models/vgg11/vgg11.h5")
+      model.save_weights("./models/vgg11/vgg11_tf.ckpt")
 
-    # TODO: Save the weights of the model in .ckpt format
-    if (model_to_train == "VGG11"):
-        # plt.title("VGG11")
-        # plt.savefig("vgg11_accplot.png")
-        #model.save("./models/vgg11/vgg11.h5")
-        model.save_weights("./models/vgg11/vgg11_tf.ckpt")
-
-    elif (model_to_train == "VGG16"):
-        # plt.title("VGG16")
-        # plt.savefig("vgg16_accplot.png")
-        #model.save("./models/vgg16/vgg16.h5")
-        model.save_weights("./models/vgg16/vgg16_tf.ckpt")
+  elif (model_to_train == "VGG16"):
+      #model.save("./models/vgg16/vgg16.h5")
+      model.save_weights("./models/vgg16/vgg16_tf.ckpt")

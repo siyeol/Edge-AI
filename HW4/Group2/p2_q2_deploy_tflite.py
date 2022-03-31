@@ -38,13 +38,11 @@ total_inference_time = 0
 for filename in tqdm(os.listdir("./test_deployment")):
   with Image.open(os.path.join("./test_deployment", filename)).resize((32, 32)) as img:
     
-    
+    # Normalize the input image
     input_image = np.float32(img) / 255.
     
     input_image = np.expand_dims(np.float32(input_image), axis=0)
     
-    
-
     # Set the input tensor as the image
     interpreter.set_tensor(input_details[0]['index'], input_image)
 

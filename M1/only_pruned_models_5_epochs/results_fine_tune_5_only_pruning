@@ -1,0 +1,213 @@
+Files already downloaded and verified
+[I] Model loaded from trained_Mobilenetv1.pt
+mode: Non-pruned model=True, Test accuracy=77.5400
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 0.1354
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 0.1768
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 0.1190
+Accuracy of the model on the  50000 train images:  94.587997 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.0113
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.0144
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.0282
+Accuracy of the model on the  50000 train images:  99.127998 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.0984
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.0054
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.0502
+Accuracy of the model on the  50000 train images:  99.028000 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.0225
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.0712
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.0519
+Accuracy of the model on the  50000 train images:  98.769997 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.0492
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.0116
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.0331
+Accuracy of the model on the  50000 train images:  98.881996 %
+mode: thres=0.05, Test accuracy=76.4100
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 0.1963
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 0.3446
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 0.1149
+Accuracy of the model on the  50000 train images:  92.612000 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.0308
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.0728
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.0808
+Accuracy of the model on the  50000 train images:  98.332001 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.0556
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.0440
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.0730
+Accuracy of the model on the  50000 train images:  98.538002 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.0277
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.0465
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.0533
+Accuracy of the model on the  50000 train images:  98.535995 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.0195
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.0175
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.0043
+Accuracy of the model on the  50000 train images:  98.832001 %
+mode: thres=0.1, Test accuracy=76.4800
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 0.4587
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 0.4163
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 0.3031
+Accuracy of the model on the  50000 train images:  84.330002 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.0887
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.1883
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.2300
+Accuracy of the model on the  50000 train images:  94.637993 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.0644
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.0682
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.0876
+Accuracy of the model on the  50000 train images:  97.145996 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.0561
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.0829
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.0301
+Accuracy of the model on the  50000 train images:  97.799995 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.0155
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.0804
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.0441
+Accuracy of the model on the  50000 train images:  98.082001 %
+mode: thres=0.2, Test accuracy=75.0700
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 0.5888
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 0.6936
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 0.6050
+Accuracy of the model on the  50000 train images:  79.153999 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.2543
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.3130
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.2727
+Accuracy of the model on the  50000 train images:  89.849998 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.0582
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.1589
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.2090
+Accuracy of the model on the  50000 train images:  94.612000 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.1045
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.1263
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.2352
+Accuracy of the model on the  50000 train images:  95.958000 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.0643
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.0708
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.0737
+Accuracy of the model on the  50000 train images:  97.077995 %
+mode: thres=0.3, Test accuracy=74.4000
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 0.9183
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 0.6536
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 0.6867
+Accuracy of the model on the  50000 train images:  72.648003 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.4921
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.4089
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.4905
+Accuracy of the model on the  50000 train images:  82.797997 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.2254
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.2635
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.2839
+Accuracy of the model on the  50000 train images:  88.251999 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.1946
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.2273
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.1917
+Accuracy of the model on the  50000 train images:  91.881996 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.1028
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.1984
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.4141
+Accuracy of the model on the  50000 train images:  93.989998 %
+mode: thres=0.4, Test accuracy=71.9800
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 1.0330
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 0.8089
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 0.6986
+Accuracy of the model on the  50000 train images:  66.793999 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.7499
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.5113
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.7246
+Accuracy of the model on the  50000 train images:  77.381996 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.5582
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.5520
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.3835
+Accuracy of the model on the  50000 train images:  82.176003 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.3106
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.4244
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.3925
+Accuracy of the model on the  50000 train images:  85.678001 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.2858
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.2742
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.3602
+Accuracy of the model on the  50000 train images:  88.413994 %
+mode: thres=0.5, Test accuracy=70.3600
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 1.2775
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 1.0825
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 1.1726
+Accuracy of the model on the  50000 train images:  58.003998 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 0.9105
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 0.9646
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 0.9928
+Accuracy of the model on the  50000 train images:  69.297997 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 0.6994
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 0.6330
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.6717
+Accuracy of the model on the  50000 train images:  73.773994 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.5151
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.6829
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 0.5827
+Accuracy of the model on the  50000 train images:  77.145996 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.4730
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.5076
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.5978
+Accuracy of the model on the  50000 train images:  79.722000 %
+mode: thres=0.6, Test accuracy=67.7900
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 1.5742
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 1.5749
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 1.4225
+Accuracy of the model on the  50000 train images:  46.261997 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 1.2591
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 1.2674
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 1.2078
+Accuracy of the model on the  50000 train images:  56.841999 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 1.2083
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 1.1366
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 0.9209
+Accuracy of the model on the  50000 train images:  61.534000 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 0.9111
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 0.8960
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 1.0255
+Accuracy of the model on the  50000 train images:  64.199997 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 0.9060
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 0.8634
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 0.8108
+Accuracy of the model on the  50000 train images:  66.334000 %
+mode: thres=0.7, Test accuracy=58.7500
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 1.8008
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 1.7546
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 1.6337
+Accuracy of the model on the  50000 train images:  36.326000 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 1.5349
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 1.5667
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 1.3506
+Accuracy of the model on the  50000 train images:  46.056000 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 1.4507
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 1.4514
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 1.5194
+Accuracy of the model on the  50000 train images:  49.627998 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 1.1455
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 1.4266
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 1.3054
+Accuracy of the model on the  50000 train images:  52.124001 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 1.2763
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 1.1470
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 1.2194
+Accuracy of the model on the  50000 train images:  54.181999 %
+mode: thres=0.8, Test accuracy=32.8300
+Epoch: [ 1/ 5], Step: [ 100/ 390], Loss: 2.3058
+Epoch: [ 1/ 5], Step: [ 200/ 390], Loss: 2.3112
+Epoch: [ 1/ 5], Step: [ 300/ 390], Loss: 2.3036
+Accuracy of the model on the  50000 train images:  10.012000 %
+Epoch: [ 2/ 5], Step: [ 100/ 390], Loss: 2.3060
+Epoch: [ 2/ 5], Step: [ 200/ 390], Loss: 2.2944
+Epoch: [ 2/ 5], Step: [ 300/ 390], Loss: 2.3017
+Accuracy of the model on the  50000 train images:  10.226000 %
+Epoch: [ 3/ 5], Step: [ 100/ 390], Loss: 2.3088
+Epoch: [ 3/ 5], Step: [ 200/ 390], Loss: 2.3061
+Epoch: [ 3/ 5], Step: [ 300/ 390], Loss: 2.3088
+Accuracy of the model on the  50000 train images:  9.916000 %
+Epoch: [ 4/ 5], Step: [ 100/ 390], Loss: 2.3012
+Epoch: [ 4/ 5], Step: [ 200/ 390], Loss: 2.2989
+Epoch: [ 4/ 5], Step: [ 300/ 390], Loss: 2.3028
+Accuracy of the model on the  50000 train images:  9.931999 %
+Epoch: [ 5/ 5], Step: [ 100/ 390], Loss: 2.3078
+Epoch: [ 5/ 5], Step: [ 200/ 390], Loss: 2.2975
+Epoch: [ 5/ 5], Step: [ 300/ 390], Loss: 2.3007
+Accuracy of the model on the  50000 train images:  9.924000 %
+mode: thres=0.9, Test accuracy=10.0000

@@ -1,0 +1,899 @@
+Files already downloaded and verified
+
+
+Only pruned accuracy:
+mode: thres=0.05, Test accuracy=76.3900
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 28, 32, 32]             756
+       BatchNorm2d-2           [-1, 28, 32, 32]              56
+            Conv2d-3           [-1, 28, 32, 32]             252
+       BatchNorm2d-4           [-1, 28, 32, 32]              56
+            Conv2d-5           [-1, 56, 32, 32]           1,568
+       BatchNorm2d-6           [-1, 56, 32, 32]             112
+             Block-7           [-1, 56, 32, 32]               0
+            Conv2d-8           [-1, 56, 16, 16]             504
+       BatchNorm2d-9           [-1, 56, 16, 16]             112
+           Conv2d-10          [-1, 115, 16, 16]           6,440
+      BatchNorm2d-11          [-1, 115, 16, 16]             230
+            Block-12          [-1, 115, 16, 16]               0
+           Conv2d-13          [-1, 115, 16, 16]           1,035
+      BatchNorm2d-14          [-1, 115, 16, 16]             230
+           Conv2d-15          [-1, 114, 16, 16]          13,110
+      BatchNorm2d-16          [-1, 114, 16, 16]             228
+            Block-17          [-1, 114, 16, 16]               0
+           Conv2d-18            [-1, 114, 8, 8]           1,026
+      BatchNorm2d-19            [-1, 114, 8, 8]             228
+           Conv2d-20            [-1, 232, 8, 8]          26,448
+      BatchNorm2d-21            [-1, 232, 8, 8]             464
+            Block-22            [-1, 232, 8, 8]               0
+           Conv2d-23            [-1, 232, 8, 8]           2,088
+      BatchNorm2d-24            [-1, 232, 8, 8]             464
+           Conv2d-25            [-1, 231, 8, 8]          53,592
+      BatchNorm2d-26            [-1, 231, 8, 8]             462
+            Block-27            [-1, 231, 8, 8]               0
+           Conv2d-28            [-1, 231, 4, 4]           2,079
+      BatchNorm2d-29            [-1, 231, 4, 4]             462
+           Conv2d-30            [-1, 460, 4, 4]         106,260
+      BatchNorm2d-31            [-1, 460, 4, 4]             920
+            Block-32            [-1, 460, 4, 4]               0
+           Conv2d-33            [-1, 460, 4, 4]           4,140
+      BatchNorm2d-34            [-1, 460, 4, 4]             920
+           Conv2d-35            [-1, 461, 4, 4]         212,060
+      BatchNorm2d-36            [-1, 461, 4, 4]             922
+            Block-37            [-1, 461, 4, 4]               0
+           Conv2d-38            [-1, 461, 4, 4]           4,149
+      BatchNorm2d-39            [-1, 461, 4, 4]             922
+           Conv2d-40            [-1, 461, 4, 4]         212,521
+      BatchNorm2d-41            [-1, 461, 4, 4]             922
+            Block-42            [-1, 461, 4, 4]               0
+           Conv2d-43            [-1, 461, 4, 4]           4,149
+      BatchNorm2d-44            [-1, 461, 4, 4]             922
+           Conv2d-45            [-1, 461, 4, 4]         212,521
+      BatchNorm2d-46            [-1, 461, 4, 4]             922
+            Block-47            [-1, 461, 4, 4]               0
+           Conv2d-48            [-1, 461, 4, 4]           4,149
+      BatchNorm2d-49            [-1, 461, 4, 4]             922
+           Conv2d-50            [-1, 460, 4, 4]         212,060
+      BatchNorm2d-51            [-1, 460, 4, 4]             920
+            Block-52            [-1, 460, 4, 4]               0
+           Conv2d-53            [-1, 460, 4, 4]           4,140
+      BatchNorm2d-54            [-1, 460, 4, 4]             920
+           Conv2d-55            [-1, 460, 4, 4]         211,600
+      BatchNorm2d-56            [-1, 460, 4, 4]             920
+            Block-57            [-1, 460, 4, 4]               0
+           Conv2d-58            [-1, 460, 2, 2]           4,140
+      BatchNorm2d-59            [-1, 460, 2, 2]             920
+           Conv2d-60            [-1, 934, 2, 2]         429,640
+      BatchNorm2d-61            [-1, 934, 2, 2]           1,868
+            Block-62            [-1, 934, 2, 2]               0
+           Conv2d-63            [-1, 934, 2, 2]           8,406
+      BatchNorm2d-64            [-1, 934, 2, 2]           1,868
+           Conv2d-65            [-1, 972, 2, 2]         907,848
+      BatchNorm2d-66            [-1, 972, 2, 2]           1,944
+            Block-67            [-1, 972, 2, 2]               0
+           Linear-68                   [-1, 10]           9,730
+================================================================
+Total params: 2,676,247
+Trainable params: 2,676,247
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 7.10
+Params size (MB): 10.21
+Estimated Total Size (MB): 17.32
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 0.5001
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 0.4358
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 0.4892
+Accuracy of the model on the  50000 train images:  89.387993 %
+mode: thres=0.05, Test accuracy=70.9700
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 0.7336
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 0.8756
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 0.4038
+Accuracy of the model on the  50000 train images:  89.550003 %
+mode: thres=0.05, Test accuracy=71.4200
+
+
+Only pruned accuracy:
+mode: thres=0.1, Test accuracy=76.4800
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 25, 32, 32]             675
+       BatchNorm2d-2           [-1, 25, 32, 32]              50
+            Conv2d-3           [-1, 25, 32, 32]             225
+       BatchNorm2d-4           [-1, 25, 32, 32]              50
+            Conv2d-5           [-1, 51, 32, 32]           1,275
+       BatchNorm2d-6           [-1, 51, 32, 32]             102
+             Block-7           [-1, 51, 32, 32]               0
+            Conv2d-8           [-1, 51, 16, 16]             459
+       BatchNorm2d-9           [-1, 51, 16, 16]             102
+           Conv2d-10          [-1, 104, 16, 16]           5,304
+      BatchNorm2d-11          [-1, 104, 16, 16]             208
+            Block-12          [-1, 104, 16, 16]               0
+           Conv2d-13          [-1, 104, 16, 16]             936
+      BatchNorm2d-14          [-1, 104, 16, 16]             208
+           Conv2d-15          [-1, 104, 16, 16]          10,816
+      BatchNorm2d-16          [-1, 104, 16, 16]             208
+            Block-17          [-1, 104, 16, 16]               0
+           Conv2d-18            [-1, 104, 8, 8]             936
+      BatchNorm2d-19            [-1, 104, 8, 8]             208
+           Conv2d-20            [-1, 208, 8, 8]          21,632
+      BatchNorm2d-21            [-1, 208, 8, 8]             416
+            Block-22            [-1, 208, 8, 8]               0
+           Conv2d-23            [-1, 208, 8, 8]           1,872
+      BatchNorm2d-24            [-1, 208, 8, 8]             416
+           Conv2d-25            [-1, 206, 8, 8]          42,848
+      BatchNorm2d-26            [-1, 206, 8, 8]             412
+            Block-27            [-1, 206, 8, 8]               0
+           Conv2d-28            [-1, 206, 4, 4]           1,854
+      BatchNorm2d-29            [-1, 206, 4, 4]             412
+           Conv2d-30            [-1, 415, 4, 4]          85,490
+      BatchNorm2d-31            [-1, 415, 4, 4]             830
+            Block-32            [-1, 415, 4, 4]               0
+           Conv2d-33            [-1, 415, 4, 4]           3,735
+      BatchNorm2d-34            [-1, 415, 4, 4]             830
+           Conv2d-35            [-1, 420, 4, 4]         174,300
+      BatchNorm2d-36            [-1, 420, 4, 4]             840
+            Block-37            [-1, 420, 4, 4]               0
+           Conv2d-38            [-1, 420, 4, 4]           3,780
+      BatchNorm2d-39            [-1, 420, 4, 4]             840
+           Conv2d-40            [-1, 415, 4, 4]         174,300
+      BatchNorm2d-41            [-1, 415, 4, 4]             830
+            Block-42            [-1, 415, 4, 4]               0
+           Conv2d-43            [-1, 415, 4, 4]           3,735
+      BatchNorm2d-44            [-1, 415, 4, 4]             830
+           Conv2d-45            [-1, 419, 4, 4]         173,885
+      BatchNorm2d-46            [-1, 419, 4, 4]             838
+            Block-47            [-1, 419, 4, 4]               0
+           Conv2d-48            [-1, 419, 4, 4]           3,771
+      BatchNorm2d-49            [-1, 419, 4, 4]             838
+           Conv2d-50            [-1, 416, 4, 4]         174,304
+      BatchNorm2d-51            [-1, 416, 4, 4]             832
+            Block-52            [-1, 416, 4, 4]               0
+           Conv2d-53            [-1, 416, 4, 4]           3,744
+      BatchNorm2d-54            [-1, 416, 4, 4]             832
+           Conv2d-55            [-1, 417, 4, 4]         173,472
+      BatchNorm2d-56            [-1, 417, 4, 4]             834
+            Block-57            [-1, 417, 4, 4]               0
+           Conv2d-58            [-1, 417, 2, 2]           3,753
+      BatchNorm2d-59            [-1, 417, 2, 2]             834
+           Conv2d-60            [-1, 854, 2, 2]         356,118
+      BatchNorm2d-61            [-1, 854, 2, 2]           1,708
+            Block-62            [-1, 854, 2, 2]               0
+           Conv2d-63            [-1, 854, 2, 2]           7,686
+      BatchNorm2d-64            [-1, 854, 2, 2]           1,708
+           Conv2d-65            [-1, 921, 2, 2]         786,534
+      BatchNorm2d-66            [-1, 921, 2, 2]           1,842
+            Block-67            [-1, 921, 2, 2]               0
+           Linear-68                   [-1, 10]           9,220
+================================================================
+Total params: 2,244,717
+Trainable params: 2,244,717
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 6.43
+Params size (MB): 8.56
+Estimated Total Size (MB): 15.00
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 1.0636
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 1.0684
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 1.0885
+Accuracy of the model on the  50000 train images:  86.468002 %
+mode: thres=0.1, Test accuracy=69.1500
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 1.3664
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 0.9301
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 0.9146
+Accuracy of the model on the  50000 train images:  86.358002 %
+mode: thres=0.1, Test accuracy=69.1900
+
+
+Only pruned accuracy:
+mode: thres=0.2, Test accuracy=75.0700
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 21, 32, 32]             567
+       BatchNorm2d-2           [-1, 21, 32, 32]              42
+            Conv2d-3           [-1, 21, 32, 32]             189
+       BatchNorm2d-4           [-1, 21, 32, 32]              42
+            Conv2d-5           [-1, 43, 32, 32]             903
+       BatchNorm2d-6           [-1, 43, 32, 32]              86
+             Block-7           [-1, 43, 32, 32]               0
+            Conv2d-8           [-1, 43, 16, 16]             387
+       BatchNorm2d-9           [-1, 43, 16, 16]              86
+           Conv2d-10           [-1, 85, 16, 16]           3,655
+      BatchNorm2d-11           [-1, 85, 16, 16]             170
+            Block-12           [-1, 85, 16, 16]               0
+           Conv2d-13           [-1, 85, 16, 16]             765
+      BatchNorm2d-14           [-1, 85, 16, 16]             170
+           Conv2d-15           [-1, 84, 16, 16]           7,140
+      BatchNorm2d-16           [-1, 84, 16, 16]             168
+            Block-17           [-1, 84, 16, 16]               0
+           Conv2d-18             [-1, 84, 8, 8]             756
+      BatchNorm2d-19             [-1, 84, 8, 8]             168
+           Conv2d-20            [-1, 167, 8, 8]          14,028
+      BatchNorm2d-21            [-1, 167, 8, 8]             334
+            Block-22            [-1, 167, 8, 8]               0
+           Conv2d-23            [-1, 167, 8, 8]           1,503
+      BatchNorm2d-24            [-1, 167, 8, 8]             334
+           Conv2d-25            [-1, 177, 8, 8]          29,559
+      BatchNorm2d-26            [-1, 177, 8, 8]             354
+            Block-27            [-1, 177, 8, 8]               0
+           Conv2d-28            [-1, 177, 4, 4]           1,593
+      BatchNorm2d-29            [-1, 177, 4, 4]             354
+           Conv2d-30            [-1, 348, 4, 4]          61,596
+      BatchNorm2d-31            [-1, 348, 4, 4]             696
+            Block-32            [-1, 348, 4, 4]               0
+           Conv2d-33            [-1, 348, 4, 4]           3,132
+      BatchNorm2d-34            [-1, 348, 4, 4]             696
+           Conv2d-35            [-1, 356, 4, 4]         123,888
+      BatchNorm2d-36            [-1, 356, 4, 4]             712
+            Block-37            [-1, 356, 4, 4]               0
+           Conv2d-38            [-1, 356, 4, 4]           3,204
+      BatchNorm2d-39            [-1, 356, 4, 4]             712
+           Conv2d-40            [-1, 355, 4, 4]         126,380
+      BatchNorm2d-41            [-1, 355, 4, 4]             710
+            Block-42            [-1, 355, 4, 4]               0
+           Conv2d-43            [-1, 355, 4, 4]           3,195
+      BatchNorm2d-44            [-1, 355, 4, 4]             710
+           Conv2d-45            [-1, 348, 4, 4]         123,540
+      BatchNorm2d-46            [-1, 348, 4, 4]             696
+            Block-47            [-1, 348, 4, 4]               0
+           Conv2d-48            [-1, 348, 4, 4]           3,132
+      BatchNorm2d-49            [-1, 348, 4, 4]             696
+           Conv2d-50            [-1, 347, 4, 4]         120,756
+      BatchNorm2d-51            [-1, 347, 4, 4]             694
+            Block-52            [-1, 347, 4, 4]               0
+           Conv2d-53            [-1, 347, 4, 4]           3,123
+      BatchNorm2d-54            [-1, 347, 4, 4]             694
+           Conv2d-55            [-1, 349, 4, 4]         121,103
+      BatchNorm2d-56            [-1, 349, 4, 4]             698
+            Block-57            [-1, 349, 4, 4]               0
+           Conv2d-58            [-1, 349, 2, 2]           3,141
+      BatchNorm2d-59            [-1, 349, 2, 2]             698
+           Conv2d-60            [-1, 705, 2, 2]         246,045
+      BatchNorm2d-61            [-1, 705, 2, 2]           1,410
+            Block-62            [-1, 705, 2, 2]               0
+           Conv2d-63            [-1, 705, 2, 2]           6,345
+      BatchNorm2d-64            [-1, 705, 2, 2]           1,410
+           Conv2d-65            [-1, 819, 2, 2]         577,395
+      BatchNorm2d-66            [-1, 819, 2, 2]           1,638
+            Block-67            [-1, 819, 2, 2]               0
+           Linear-68                   [-1, 10]           8,200
+================================================================
+Total params: 1,610,398
+Trainable params: 1,610,398
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 5.35
+Params size (MB): 6.14
+Estimated Total Size (MB): 11.50
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 1.1356
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 1.5633
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 1.7696
+Accuracy of the model on the  50000 train images:  79.741997 %
+mode: thres=0.2, Test accuracy=66.9400
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 1.5805
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 1.2801
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 2.1459
+Accuracy of the model on the  50000 train images:  79.781998 %
+mode: thres=0.2, Test accuracy=66.7900
+
+
+Only pruned accuracy:
+mode: thres=0.3, Test accuracy=74.4000
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 18, 32, 32]             486
+       BatchNorm2d-2           [-1, 18, 32, 32]              36
+            Conv2d-3           [-1, 18, 32, 32]             162
+       BatchNorm2d-4           [-1, 18, 32, 32]              36
+            Conv2d-5           [-1, 33, 32, 32]             594
+       BatchNorm2d-6           [-1, 33, 32, 32]              66
+             Block-7           [-1, 33, 32, 32]               0
+            Conv2d-8           [-1, 33, 16, 16]             297
+       BatchNorm2d-9           [-1, 33, 16, 16]              66
+           Conv2d-10           [-1, 72, 16, 16]           2,376
+      BatchNorm2d-11           [-1, 72, 16, 16]             144
+            Block-12           [-1, 72, 16, 16]               0
+           Conv2d-13           [-1, 72, 16, 16]             648
+      BatchNorm2d-14           [-1, 72, 16, 16]             144
+           Conv2d-15           [-1, 70, 16, 16]           5,040
+      BatchNorm2d-16           [-1, 70, 16, 16]             140
+            Block-17           [-1, 70, 16, 16]               0
+           Conv2d-18             [-1, 70, 8, 8]             630
+      BatchNorm2d-19             [-1, 70, 8, 8]             140
+           Conv2d-20            [-1, 138, 8, 8]           9,660
+      BatchNorm2d-21            [-1, 138, 8, 8]             276
+            Block-22            [-1, 138, 8, 8]               0
+           Conv2d-23            [-1, 138, 8, 8]           1,242
+      BatchNorm2d-24            [-1, 138, 8, 8]             276
+           Conv2d-25            [-1, 150, 8, 8]          20,700
+      BatchNorm2d-26            [-1, 150, 8, 8]             300
+            Block-27            [-1, 150, 8, 8]               0
+           Conv2d-28            [-1, 150, 4, 4]           1,350
+      BatchNorm2d-29            [-1, 150, 4, 4]             300
+           Conv2d-30            [-1, 293, 4, 4]          43,950
+      BatchNorm2d-31            [-1, 293, 4, 4]             586
+            Block-32            [-1, 293, 4, 4]               0
+           Conv2d-33            [-1, 293, 4, 4]           2,637
+      BatchNorm2d-34            [-1, 293, 4, 4]             586
+           Conv2d-35            [-1, 301, 4, 4]          88,193
+      BatchNorm2d-36            [-1, 301, 4, 4]             602
+            Block-37            [-1, 301, 4, 4]               0
+           Conv2d-38            [-1, 301, 4, 4]           2,709
+      BatchNorm2d-39            [-1, 301, 4, 4]             602
+           Conv2d-40            [-1, 299, 4, 4]          89,999
+      BatchNorm2d-41            [-1, 299, 4, 4]             598
+            Block-42            [-1, 299, 4, 4]               0
+           Conv2d-43            [-1, 299, 4, 4]           2,691
+      BatchNorm2d-44            [-1, 299, 4, 4]             598
+           Conv2d-45            [-1, 298, 4, 4]          89,102
+      BatchNorm2d-46            [-1, 298, 4, 4]             596
+            Block-47            [-1, 298, 4, 4]               0
+           Conv2d-48            [-1, 298, 4, 4]           2,682
+      BatchNorm2d-49            [-1, 298, 4, 4]             596
+           Conv2d-50            [-1, 293, 4, 4]          87,314
+      BatchNorm2d-51            [-1, 293, 4, 4]             586
+            Block-52            [-1, 293, 4, 4]               0
+           Conv2d-53            [-1, 293, 4, 4]           2,637
+      BatchNorm2d-54            [-1, 293, 4, 4]             586
+           Conv2d-55            [-1, 301, 4, 4]          88,193
+      BatchNorm2d-56            [-1, 301, 4, 4]             602
+            Block-57            [-1, 301, 4, 4]               0
+           Conv2d-58            [-1, 301, 2, 2]           2,709
+      BatchNorm2d-59            [-1, 301, 2, 2]             602
+           Conv2d-60            [-1, 586, 2, 2]         176,386
+      BatchNorm2d-61            [-1, 586, 2, 2]           1,172
+            Block-62            [-1, 586, 2, 2]               0
+           Conv2d-63            [-1, 586, 2, 2]           5,274
+      BatchNorm2d-64            [-1, 586, 2, 2]           1,172
+           Conv2d-65            [-1, 717, 2, 2]         420,162
+      BatchNorm2d-66            [-1, 717, 2, 2]           1,434
+            Block-67            [-1, 717, 2, 2]               0
+           Linear-68                   [-1, 10]           7,180
+================================================================
+Total params: 1,167,845
+Trainable params: 1,167,845
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 4.43
+Params size (MB): 4.45
+Estimated Total Size (MB): 8.90
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 2.6861
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 2.2201
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 2.1244
+Accuracy of the model on the  50000 train images:  72.161995 %
+mode: thres=0.3, Test accuracy=62.8900
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 2.3914
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 2.4348
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 1.6597
+Accuracy of the model on the  50000 train images:  72.015999 %
+mode: thres=0.3, Test accuracy=62.7600
+
+
+Only pruned accuracy:
+mode: thres=0.4, Test accuracy=71.9600
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 13, 32, 32]             351
+       BatchNorm2d-2           [-1, 13, 32, 32]              26
+            Conv2d-3           [-1, 13, 32, 32]             117
+       BatchNorm2d-4           [-1, 13, 32, 32]              26
+            Conv2d-5           [-1, 26, 32, 32]             338
+       BatchNorm2d-6           [-1, 26, 32, 32]              52
+             Block-7           [-1, 26, 32, 32]               0
+            Conv2d-8           [-1, 26, 16, 16]             234
+       BatchNorm2d-9           [-1, 26, 16, 16]              52
+           Conv2d-10           [-1, 57, 16, 16]           1,482
+      BatchNorm2d-11           [-1, 57, 16, 16]             114
+            Block-12           [-1, 57, 16, 16]               0
+           Conv2d-13           [-1, 57, 16, 16]             513
+      BatchNorm2d-14           [-1, 57, 16, 16]             114
+           Conv2d-15           [-1, 57, 16, 16]           3,249
+      BatchNorm2d-16           [-1, 57, 16, 16]             114
+            Block-17           [-1, 57, 16, 16]               0
+           Conv2d-18             [-1, 57, 8, 8]             513
+      BatchNorm2d-19             [-1, 57, 8, 8]             114
+           Conv2d-20            [-1, 112, 8, 8]           6,384
+      BatchNorm2d-21            [-1, 112, 8, 8]             224
+            Block-22            [-1, 112, 8, 8]               0
+           Conv2d-23            [-1, 112, 8, 8]           1,008
+      BatchNorm2d-24            [-1, 112, 8, 8]             224
+           Conv2d-25            [-1, 124, 8, 8]          13,888
+      BatchNorm2d-26            [-1, 124, 8, 8]             248
+            Block-27            [-1, 124, 8, 8]               0
+           Conv2d-28            [-1, 124, 4, 4]           1,116
+      BatchNorm2d-29            [-1, 124, 4, 4]             248
+           Conv2d-30            [-1, 240, 4, 4]          29,760
+      BatchNorm2d-31            [-1, 240, 4, 4]             480
+            Block-32            [-1, 240, 4, 4]               0
+           Conv2d-33            [-1, 240, 4, 4]           2,160
+      BatchNorm2d-34            [-1, 240, 4, 4]             480
+           Conv2d-35            [-1, 242, 4, 4]          58,080
+      BatchNorm2d-36            [-1, 242, 4, 4]             484
+            Block-37            [-1, 242, 4, 4]               0
+           Conv2d-38            [-1, 242, 4, 4]           2,178
+      BatchNorm2d-39            [-1, 242, 4, 4]             484
+           Conv2d-40            [-1, 251, 4, 4]          60,742
+      BatchNorm2d-41            [-1, 251, 4, 4]             502
+            Block-42            [-1, 251, 4, 4]               0
+           Conv2d-43            [-1, 251, 4, 4]           2,259
+      BatchNorm2d-44            [-1, 251, 4, 4]             502
+           Conv2d-45            [-1, 247, 4, 4]          61,997
+      BatchNorm2d-46            [-1, 247, 4, 4]             494
+            Block-47            [-1, 247, 4, 4]               0
+           Conv2d-48            [-1, 247, 4, 4]           2,223
+      BatchNorm2d-49            [-1, 247, 4, 4]             494
+           Conv2d-50            [-1, 242, 4, 4]          59,774
+      BatchNorm2d-51            [-1, 242, 4, 4]             484
+            Block-52            [-1, 242, 4, 4]               0
+           Conv2d-53            [-1, 242, 4, 4]           2,178
+      BatchNorm2d-54            [-1, 242, 4, 4]             484
+           Conv2d-55            [-1, 245, 4, 4]          59,290
+      BatchNorm2d-56            [-1, 245, 4, 4]             490
+            Block-57            [-1, 245, 4, 4]               0
+           Conv2d-58            [-1, 245, 2, 2]           2,205
+      BatchNorm2d-59            [-1, 245, 2, 2]             490
+           Conv2d-60            [-1, 486, 2, 2]         119,070
+      BatchNorm2d-61            [-1, 486, 2, 2]             972
+            Block-62            [-1, 486, 2, 2]               0
+           Conv2d-63            [-1, 486, 2, 2]           4,374
+      BatchNorm2d-64            [-1, 486, 2, 2]             972
+           Conv2d-65            [-1, 614, 2, 2]         298,404
+      BatchNorm2d-66            [-1, 614, 2, 2]           1,228
+            Block-67            [-1, 614, 2, 2]               0
+           Linear-68                   [-1, 10]           6,150
+================================================================
+Total params: 810,633
+Trainable params: 810,633
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 3.53
+Params size (MB): 3.09
+Estimated Total Size (MB): 6.63
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 3.8113
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 2.8386
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 2.7604
+Accuracy of the model on the  50000 train images:  63.971996 %
+mode: thres=0.4, Test accuracy=58.1200
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 3.5975
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 2.2084
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 3.0284
+Accuracy of the model on the  50000 train images:  64.047997 %
+mode: thres=0.4, Test accuracy=58.6000
+
+
+Only pruned accuracy:
+mode: thres=0.5, Test accuracy=70.3500
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 10, 32, 32]             270
+       BatchNorm2d-2           [-1, 10, 32, 32]              20
+            Conv2d-3           [-1, 10, 32, 32]              90
+       BatchNorm2d-4           [-1, 10, 32, 32]              20
+            Conv2d-5           [-1, 18, 32, 32]             180
+       BatchNorm2d-6           [-1, 18, 32, 32]              36
+             Block-7           [-1, 18, 32, 32]               0
+            Conv2d-8           [-1, 18, 16, 16]             162
+       BatchNorm2d-9           [-1, 18, 16, 16]              36
+           Conv2d-10           [-1, 43, 16, 16]             774
+      BatchNorm2d-11           [-1, 43, 16, 16]              86
+            Block-12           [-1, 43, 16, 16]               0
+           Conv2d-13           [-1, 43, 16, 16]             387
+      BatchNorm2d-14           [-1, 43, 16, 16]              86
+           Conv2d-15           [-1, 44, 16, 16]           1,892
+      BatchNorm2d-16           [-1, 44, 16, 16]              88
+            Block-17           [-1, 44, 16, 16]               0
+           Conv2d-18             [-1, 44, 8, 8]             396
+      BatchNorm2d-19             [-1, 44, 8, 8]              88
+           Conv2d-20             [-1, 87, 8, 8]           3,828
+      BatchNorm2d-21             [-1, 87, 8, 8]             174
+            Block-22             [-1, 87, 8, 8]               0
+           Conv2d-23             [-1, 87, 8, 8]             783
+      BatchNorm2d-24             [-1, 87, 8, 8]             174
+           Conv2d-25             [-1, 96, 8, 8]           8,352
+      BatchNorm2d-26             [-1, 96, 8, 8]             192
+            Block-27             [-1, 96, 8, 8]               0
+           Conv2d-28             [-1, 96, 4, 4]             864
+      BatchNorm2d-29             [-1, 96, 4, 4]             192
+           Conv2d-30            [-1, 187, 4, 4]          17,952
+      BatchNorm2d-31            [-1, 187, 4, 4]             374
+            Block-32            [-1, 187, 4, 4]               0
+           Conv2d-33            [-1, 187, 4, 4]           1,683
+      BatchNorm2d-34            [-1, 187, 4, 4]             374
+           Conv2d-35            [-1, 190, 4, 4]          35,530
+      BatchNorm2d-36            [-1, 190, 4, 4]             380
+            Block-37            [-1, 190, 4, 4]               0
+           Conv2d-38            [-1, 190, 4, 4]           1,710
+      BatchNorm2d-39            [-1, 190, 4, 4]             380
+           Conv2d-40            [-1, 194, 4, 4]          36,860
+      BatchNorm2d-41            [-1, 194, 4, 4]             388
+            Block-42            [-1, 194, 4, 4]               0
+           Conv2d-43            [-1, 194, 4, 4]           1,746
+      BatchNorm2d-44            [-1, 194, 4, 4]             388
+           Conv2d-45            [-1, 193, 4, 4]          37,442
+      BatchNorm2d-46            [-1, 193, 4, 4]             386
+            Block-47            [-1, 193, 4, 4]               0
+           Conv2d-48            [-1, 193, 4, 4]           1,737
+      BatchNorm2d-49            [-1, 193, 4, 4]             386
+           Conv2d-50            [-1, 196, 4, 4]          37,828
+      BatchNorm2d-51            [-1, 196, 4, 4]             392
+            Block-52            [-1, 196, 4, 4]               0
+           Conv2d-53            [-1, 196, 4, 4]           1,764
+      BatchNorm2d-54            [-1, 196, 4, 4]             392
+           Conv2d-55            [-1, 188, 4, 4]          36,848
+      BatchNorm2d-56            [-1, 188, 4, 4]             376
+            Block-57            [-1, 188, 4, 4]               0
+           Conv2d-58            [-1, 188, 2, 2]           1,692
+      BatchNorm2d-59            [-1, 188, 2, 2]             376
+           Conv2d-60            [-1, 375, 2, 2]          70,500
+      BatchNorm2d-61            [-1, 375, 2, 2]             750
+            Block-62            [-1, 375, 2, 2]               0
+           Conv2d-63            [-1, 375, 2, 2]           3,375
+      BatchNorm2d-64            [-1, 375, 2, 2]             750
+           Conv2d-65            [-1, 512, 2, 2]         192,000
+      BatchNorm2d-66            [-1, 512, 2, 2]           1,024
+            Block-67            [-1, 512, 2, 2]               0
+           Linear-68                   [-1, 10]           5,130
+================================================================
+Total params: 510,083
+Trainable params: 510,083
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 2.67
+Params size (MB): 1.95
+Estimated Total Size (MB): 4.63
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 4.2997
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 4.3318
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 5.0563
+Accuracy of the model on the  50000 train images:  54.263996 %
+mode: thres=0.5, Test accuracy=50.2700
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 3.9202
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 3.4202
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 4.3773
+Accuracy of the model on the  50000 train images:  54.298000 %
+mode: thres=0.5, Test accuracy=50.3500
+
+
+Only pruned accuracy:
+mode: thres=0.6, Test accuracy=67.8100
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1            [-1, 8, 32, 32]             216
+       BatchNorm2d-2            [-1, 8, 32, 32]              16
+            Conv2d-3            [-1, 8, 32, 32]              72
+       BatchNorm2d-4            [-1, 8, 32, 32]              16
+            Conv2d-5           [-1, 13, 32, 32]             104
+       BatchNorm2d-6           [-1, 13, 32, 32]              26
+             Block-7           [-1, 13, 32, 32]               0
+            Conv2d-8           [-1, 13, 16, 16]             117
+       BatchNorm2d-9           [-1, 13, 16, 16]              26
+           Conv2d-10           [-1, 30, 16, 16]             390
+      BatchNorm2d-11           [-1, 30, 16, 16]              60
+            Block-12           [-1, 30, 16, 16]               0
+           Conv2d-13           [-1, 30, 16, 16]             270
+      BatchNorm2d-14           [-1, 30, 16, 16]              60
+           Conv2d-15           [-1, 30, 16, 16]             900
+      BatchNorm2d-16           [-1, 30, 16, 16]              60
+            Block-17           [-1, 30, 16, 16]               0
+           Conv2d-18             [-1, 30, 8, 8]             270
+      BatchNorm2d-19             [-1, 30, 8, 8]              60
+           Conv2d-20             [-1, 63, 8, 8]           1,890
+      BatchNorm2d-21             [-1, 63, 8, 8]             126
+            Block-22             [-1, 63, 8, 8]               0
+           Conv2d-23             [-1, 63, 8, 8]             567
+      BatchNorm2d-24             [-1, 63, 8, 8]             126
+           Conv2d-25             [-1, 71, 8, 8]           4,473
+      BatchNorm2d-26             [-1, 71, 8, 8]             142
+            Block-27             [-1, 71, 8, 8]               0
+           Conv2d-28             [-1, 71, 4, 4]             639
+      BatchNorm2d-29             [-1, 71, 4, 4]             142
+           Conv2d-30            [-1, 140, 4, 4]           9,940
+      BatchNorm2d-31            [-1, 140, 4, 4]             280
+            Block-32            [-1, 140, 4, 4]               0
+           Conv2d-33            [-1, 140, 4, 4]           1,260
+      BatchNorm2d-34            [-1, 140, 4, 4]             280
+           Conv2d-35            [-1, 136, 4, 4]          19,040
+      BatchNorm2d-36            [-1, 136, 4, 4]             272
+            Block-37            [-1, 136, 4, 4]               0
+           Conv2d-38            [-1, 136, 4, 4]           1,224
+      BatchNorm2d-39            [-1, 136, 4, 4]             272
+           Conv2d-40            [-1, 145, 4, 4]          19,720
+      BatchNorm2d-41            [-1, 145, 4, 4]             290
+            Block-42            [-1, 145, 4, 4]               0
+           Conv2d-43            [-1, 145, 4, 4]           1,305
+      BatchNorm2d-44            [-1, 145, 4, 4]             290
+           Conv2d-45            [-1, 142, 4, 4]          20,590
+      BatchNorm2d-46            [-1, 142, 4, 4]             284
+            Block-47            [-1, 142, 4, 4]               0
+           Conv2d-48            [-1, 142, 4, 4]           1,278
+      BatchNorm2d-49            [-1, 142, 4, 4]             284
+           Conv2d-50            [-1, 148, 4, 4]          21,016
+      BatchNorm2d-51            [-1, 148, 4, 4]             296
+            Block-52            [-1, 148, 4, 4]               0
+           Conv2d-53            [-1, 148, 4, 4]           1,332
+      BatchNorm2d-54            [-1, 148, 4, 4]             296
+           Conv2d-55            [-1, 138, 4, 4]          20,424
+      BatchNorm2d-56            [-1, 138, 4, 4]             276
+            Block-57            [-1, 138, 4, 4]               0
+           Conv2d-58            [-1, 138, 2, 2]           1,242
+      BatchNorm2d-59            [-1, 138, 2, 2]             276
+           Conv2d-60            [-1, 280, 2, 2]          38,640
+      BatchNorm2d-61            [-1, 280, 2, 2]             560
+            Block-62            [-1, 280, 2, 2]               0
+           Conv2d-63            [-1, 280, 2, 2]           2,520
+      BatchNorm2d-64            [-1, 280, 2, 2]             560
+           Conv2d-65            [-1, 410, 2, 2]         114,800
+      BatchNorm2d-66            [-1, 410, 2, 2]             820
+            Block-67            [-1, 410, 2, 2]               0
+           Linear-68                   [-1, 10]           4,110
+================================================================
+Total params: 294,545
+Trainable params: 294,545
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 1.95
+Params size (MB): 1.12
+Estimated Total Size (MB): 3.09
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 4.7297
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 5.4940
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 4.5715
+Accuracy of the model on the  50000 train images:  41.633999 %
+mode: thres=0.6, Test accuracy=40.4800
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 4.7261
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 4.9478
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 5.5072
+Accuracy of the model on the  50000 train images:  41.590000 %
+mode: thres=0.6, Test accuracy=40.6900
+
+
+Only pruned accuracy:
+mode: thres=0.7, Test accuracy=58.7500
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1            [-1, 3, 32, 32]              81
+       BatchNorm2d-2            [-1, 3, 32, 32]               6
+            Conv2d-3            [-1, 3, 32, 32]              27
+       BatchNorm2d-4            [-1, 3, 32, 32]               6
+            Conv2d-5            [-1, 8, 32, 32]              24
+       BatchNorm2d-6            [-1, 8, 32, 32]              16
+             Block-7            [-1, 8, 32, 32]               0
+            Conv2d-8            [-1, 8, 16, 16]              72
+       BatchNorm2d-9            [-1, 8, 16, 16]              16
+           Conv2d-10           [-1, 21, 16, 16]             168
+      BatchNorm2d-11           [-1, 21, 16, 16]              42
+            Block-12           [-1, 21, 16, 16]               0
+           Conv2d-13           [-1, 21, 16, 16]             189
+      BatchNorm2d-14           [-1, 21, 16, 16]              42
+           Conv2d-15           [-1, 21, 16, 16]             441
+      BatchNorm2d-16           [-1, 21, 16, 16]              42
+            Block-17           [-1, 21, 16, 16]               0
+           Conv2d-18             [-1, 21, 8, 8]             189
+      BatchNorm2d-19             [-1, 21, 8, 8]              42
+           Conv2d-20             [-1, 35, 8, 8]             735
+      BatchNorm2d-21             [-1, 35, 8, 8]              70
+            Block-22             [-1, 35, 8, 8]               0
+           Conv2d-23             [-1, 35, 8, 8]             315
+      BatchNorm2d-24             [-1, 35, 8, 8]              70
+           Conv2d-25             [-1, 41, 8, 8]           1,435
+      BatchNorm2d-26             [-1, 41, 8, 8]              82
+            Block-27             [-1, 41, 8, 8]               0
+           Conv2d-28             [-1, 41, 4, 4]             369
+      BatchNorm2d-29             [-1, 41, 4, 4]              82
+           Conv2d-30             [-1, 85, 4, 4]           3,485
+      BatchNorm2d-31             [-1, 85, 4, 4]             170
+            Block-32             [-1, 85, 4, 4]               0
+           Conv2d-33             [-1, 85, 4, 4]             765
+      BatchNorm2d-34             [-1, 85, 4, 4]             170
+           Conv2d-35             [-1, 97, 4, 4]           8,245
+      BatchNorm2d-36             [-1, 97, 4, 4]             194
+            Block-37             [-1, 97, 4, 4]               0
+           Conv2d-38             [-1, 97, 4, 4]             873
+      BatchNorm2d-39             [-1, 97, 4, 4]             194
+           Conv2d-40             [-1, 94, 4, 4]           9,118
+      BatchNorm2d-41             [-1, 94, 4, 4]             188
+            Block-42             [-1, 94, 4, 4]               0
+           Conv2d-43             [-1, 94, 4, 4]             846
+      BatchNorm2d-44             [-1, 94, 4, 4]             188
+           Conv2d-45             [-1, 91, 4, 4]           8,554
+      BatchNorm2d-46             [-1, 91, 4, 4]             182
+            Block-47             [-1, 91, 4, 4]               0
+           Conv2d-48             [-1, 91, 4, 4]             819
+      BatchNorm2d-49             [-1, 91, 4, 4]             182
+           Conv2d-50             [-1, 95, 4, 4]           8,645
+      BatchNorm2d-51             [-1, 95, 4, 4]             190
+            Block-52             [-1, 95, 4, 4]               0
+           Conv2d-53             [-1, 95, 4, 4]             855
+      BatchNorm2d-54             [-1, 95, 4, 4]             190
+           Conv2d-55             [-1, 89, 4, 4]           8,455
+      BatchNorm2d-56             [-1, 89, 4, 4]             178
+            Block-57             [-1, 89, 4, 4]               0
+           Conv2d-58             [-1, 89, 2, 2]             801
+      BatchNorm2d-59             [-1, 89, 2, 2]             178
+           Conv2d-60            [-1, 178, 2, 2]          15,842
+      BatchNorm2d-61            [-1, 178, 2, 2]             356
+            Block-62            [-1, 178, 2, 2]               0
+           Conv2d-63            [-1, 178, 2, 2]           1,602
+      BatchNorm2d-64            [-1, 178, 2, 2]             356
+           Conv2d-65            [-1, 307, 2, 2]          54,646
+      BatchNorm2d-66            [-1, 307, 2, 2]             614
+            Block-67            [-1, 307, 2, 2]               0
+           Linear-68                   [-1, 10]           3,080
+================================================================
+Total params: 134,722
+Trainable params: 134,722
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 1.19
+Params size (MB): 0.51
+Estimated Total Size (MB): 1.72
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 4.9542
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 5.6003
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 6.0233
+Accuracy of the model on the  50000 train images:  22.973999 %
+mode: thres=0.7, Test accuracy=23.5000
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 5.7560
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 6.1698
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 6.1648
+Accuracy of the model on the  50000 train images:  22.897999 %
+mode: thres=0.7, Test accuracy=23.3600
+
+
+Only pruned accuracy:
+mode: thres=0.8, Test accuracy=32.7900
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1            [-1, 1, 32, 32]              27
+       BatchNorm2d-2            [-1, 1, 32, 32]               2
+            Conv2d-3            [-1, 1, 32, 32]               9
+       BatchNorm2d-4            [-1, 1, 32, 32]               2
+            Conv2d-5            [-1, 5, 32, 32]               5
+       BatchNorm2d-6            [-1, 5, 32, 32]              10
+             Block-7            [-1, 5, 32, 32]               0
+            Conv2d-8            [-1, 5, 16, 16]              45
+       BatchNorm2d-9            [-1, 5, 16, 16]              10
+           Conv2d-10            [-1, 8, 16, 16]              40
+      BatchNorm2d-11            [-1, 8, 16, 16]              16
+            Block-12            [-1, 8, 16, 16]               0
+           Conv2d-13            [-1, 8, 16, 16]              72
+      BatchNorm2d-14            [-1, 8, 16, 16]              16
+           Conv2d-15           [-1, 11, 16, 16]              88
+      BatchNorm2d-16           [-1, 11, 16, 16]              22
+            Block-17           [-1, 11, 16, 16]               0
+           Conv2d-18             [-1, 11, 8, 8]              99
+      BatchNorm2d-19             [-1, 11, 8, 8]              22
+           Conv2d-20             [-1, 21, 8, 8]             231
+      BatchNorm2d-21             [-1, 21, 8, 8]              42
+            Block-22             [-1, 21, 8, 8]               0
+           Conv2d-23             [-1, 21, 8, 8]             189
+      BatchNorm2d-24             [-1, 21, 8, 8]              42
+           Conv2d-25             [-1, 23, 8, 8]             483
+      BatchNorm2d-26             [-1, 23, 8, 8]              46
+            Block-27             [-1, 23, 8, 8]               0
+           Conv2d-28             [-1, 23, 4, 4]             207
+      BatchNorm2d-29             [-1, 23, 4, 4]              46
+           Conv2d-30             [-1, 44, 4, 4]           1,012
+      BatchNorm2d-31             [-1, 44, 4, 4]              88
+            Block-32             [-1, 44, 4, 4]               0
+           Conv2d-33             [-1, 44, 4, 4]             396
+      BatchNorm2d-34             [-1, 44, 4, 4]              88
+           Conv2d-35             [-1, 49, 4, 4]           2,156
+      BatchNorm2d-36             [-1, 49, 4, 4]              98
+            Block-37             [-1, 49, 4, 4]               0
+           Conv2d-38             [-1, 49, 4, 4]             441
+      BatchNorm2d-39             [-1, 49, 4, 4]              98
+           Conv2d-40             [-1, 57, 4, 4]           2,793
+      BatchNorm2d-41             [-1, 57, 4, 4]             114
+            Block-42             [-1, 57, 4, 4]               0
+           Conv2d-43             [-1, 57, 4, 4]             513
+      BatchNorm2d-44             [-1, 57, 4, 4]             114
+           Conv2d-45             [-1, 51, 4, 4]           2,907
+      BatchNorm2d-46             [-1, 51, 4, 4]             102
+            Block-47             [-1, 51, 4, 4]               0
+           Conv2d-48             [-1, 51, 4, 4]             459
+      BatchNorm2d-49             [-1, 51, 4, 4]             102
+           Conv2d-50             [-1, 48, 4, 4]           2,448
+      BatchNorm2d-51             [-1, 48, 4, 4]              96
+            Block-52             [-1, 48, 4, 4]               0
+           Conv2d-53             [-1, 48, 4, 4]             432
+      BatchNorm2d-54             [-1, 48, 4, 4]              96
+           Conv2d-55             [-1, 51, 4, 4]           2,448
+      BatchNorm2d-56             [-1, 51, 4, 4]             102
+            Block-57             [-1, 51, 4, 4]               0
+           Conv2d-58             [-1, 51, 2, 2]             459
+      BatchNorm2d-59             [-1, 51, 2, 2]             102
+           Conv2d-60             [-1, 97, 2, 2]           4,947
+      BatchNorm2d-61             [-1, 97, 2, 2]             194
+            Block-62             [-1, 97, 2, 2]               0
+           Conv2d-63             [-1, 97, 2, 2]             873
+      BatchNorm2d-64             [-1, 97, 2, 2]             194
+           Conv2d-65            [-1, 205, 2, 2]          19,885
+      BatchNorm2d-66            [-1, 205, 2, 2]             410
+            Block-67            [-1, 205, 2, 2]               0
+           Linear-68                   [-1, 10]           2,060
+================================================================
+Total params: 47,998
+Trainable params: 47,998
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 0.62
+Params size (MB): 0.18
+Estimated Total Size (MB): 0.81
+----------------------------------------------------------------
+
+
+New accuracy after remove channel function:
+Epoch: [ 1/ 2], Step: [ 100/ 390], Loss: 5.9076
+Epoch: [ 1/ 2], Step: [ 200/ 390], Loss: 5.2169
+Epoch: [ 1/ 2], Step: [ 300/ 390], Loss: 5.6696
+Accuracy of the model on the  50000 train images:  13.516000 %
+mode: thres=0.8, Test accuracy=13.4200
+Epoch: [ 2/ 2], Step: [ 100/ 390], Loss: 5.6802
+Epoch: [ 2/ 2], Step: [ 200/ 390], Loss: 5.8102
+Epoch: [ 2/ 2], Step: [ 300/ 390], Loss: 6.0487
+Accuracy of the model on the  50000 train images:  13.403999 %
+mode: thres=0.8, Test accuracy=13.4100
+
+
+Only pruned accuracy:
+mode: thres=0.9, Test accuracy=10.0000
+/home/etaka/anaconda3/lib/python3.9/site-packages/torch/nn/init.py:388: UserWarning: Initializing zero-element tensors is a no-op
+  warnings.warn("Initializing zero-element tensors is a no-op")
+Traceback (most recent call last):
+  File "/home/etaka/Final_M1/test_removed_channel_model.py", line 195, in <module>
+    model = remove_channel(model)
+  File "/home/etaka/Final_M1/test_removed_channel_model.py", line 55, in remove_channel
+    new_model.layers[i].conv1 = nn.Conv2d(in_planes_num, in_planes_num, kernel_size=3, stride=block.stride,
+  File "/home/etaka/anaconda3/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 430, in __init__
+    super(Conv2d, self).__init__(
+  File "/home/etaka/anaconda3/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 83, in __init__
+    if in_channels % groups != 0:
+ZeroDivisionError: integer division or modulo by zero

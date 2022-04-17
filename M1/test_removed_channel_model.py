@@ -13,7 +13,7 @@ from torchsummary import summary
 # from mobilenet_rm_filt_pt import remove_channel
 
 batch_size = 128
-fine_tune_epochs = 2
+fine_tune_epochs = 1
 learning_rate = 0.001
 enable_cuda = True
 load_my_model = True

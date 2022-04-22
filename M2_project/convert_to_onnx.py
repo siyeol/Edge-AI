@@ -16,5 +16,5 @@ model = torch.load(args.model + ".pt", map_location=torch.device('cpu'))
 
 
 random_input = torch.randn(1,3,32,32)
-torch.onnx.export(model, random_input, args.model + ".onnx", export_params=True, opset_version=10)
+torch.onnx.export(model, random_input, args.model + ".onnx", export_params=True, opset_version=11)
 

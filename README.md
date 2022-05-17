@@ -1,5 +1,3 @@
-result
-
 ![result_comparison](https://user-images.githubusercontent.com/33966473/168715784-69f2d27a-4329-43d9-8c5a-88fa4f3d5805.png)
 
 

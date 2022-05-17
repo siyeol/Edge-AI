@@ -1,4 +1,10 @@
-![result_comparison](https://user-images.githubusercontent.com/33966473/168715551-e63692c7-0f2a-4f49-8f48-cfa282613456.png)
+result
+
+![result_comparison](https://user-images.githubusercontent.com/33966473/168715784-69f2d27a-4329-43d9-8c5a-88fa4f3d5805.png)
+
+![result_comparison](https://user-images.githubusercontent.com/33966473/168715864-4babdcbb-2b7a-43d7-ba86-a1202a909c90.png)
+
+
 
 We utilized the "prune.py" to prune the initial Mobilenet and afterwads we used Knowledge Distillation to increase the accuracy of the pruned network. We used the following implementation found on github, and modified accordingly to support our case: https://github.com/peterliht/knowledge-distillation-pytorch
 We have also included the parts of the code we changed in the aforementioned framework: change the "train.py", copy the cnn_distill directory to a new mobilenetv1_distill directory with "params.json" (inside the experiments directory), change the "data_loader.py" in model directory.
